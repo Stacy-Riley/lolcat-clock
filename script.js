@@ -1,4 +1,5 @@
-//alert("hello");
+console.log("hello");
+
 var noon = 12;
 var evening = 18; // 6PM
 var wakeupTime = 9; // 9AM
@@ -6,13 +7,14 @@ var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = lunchTime + 2; // 2PM
 var time = new Date().getHours();
-
+ 
 var updateClock = function(){
-    var lolcat = document.getElementById("lolcat");
-    var messageTextUnderCat = document.getElementById("timeEvent");
-    var messageText;
-    var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
-    
+ 
+     var lolcat = document.getElementById('lolcat');
+     var message = document.getElementById('timeEvent');
+     var messageText;
+     var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+ 
     if(time == partyTime){
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat4.jpg";
     messageText = "IZ PARTEE TIME!!";
@@ -41,7 +43,7 @@ var updateClock = function(){
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat5.jpg";
     messageText = "Good afternoon!";
 }
-messageTextUnderCat.innerText = messageText;
+message.innerText = messageText;
 lolcat.src = image;
 
 showCurrentTime();
@@ -86,7 +88,8 @@ var showCurrentTime = function(){
     var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
  
     clock.innerText = clockTime; 
-};   
+}; 
+
 
 updateClock();
 var oneSecond = 1000;
