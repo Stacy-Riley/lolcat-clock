@@ -46,8 +46,8 @@ var updateClock = function(){
 
     message.innerText = messageText;
     lolcat.src = image;
+}
 
-    showCurrentTime();
 
 //All the elements of a working clock
 var showCurrentTime = function(){
@@ -86,6 +86,7 @@ var showCurrentTime = function(){
     var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
  
     clock.innerText = clockTime; 
+    //showCurrentTime();
   };
 
 
