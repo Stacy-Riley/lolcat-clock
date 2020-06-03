@@ -1,4 +1,4 @@
-console.log("hello");
+alert("hello");
 
 var noon = 12;
 var evening = 18; // 6PM
@@ -43,12 +43,11 @@ var updateClock = function(){
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat5.jpg";
     messageText = "Good afternoon!";
 }
-message.innerText = messageText;
-lolcat.src = image;
 
-showCurrentTime();
+    message.innerText = messageText;
+    lolcat.src = image;
 
-};
+    showCurrentTime();
 
 //All the elements of a working clock
 var showCurrentTime = function(){
@@ -56,7 +55,6 @@ var showCurrentTime = function(){
     var clock = document.getElementById('clock');
  
     var currentTime = new Date();
- 
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
@@ -88,9 +86,11 @@ var showCurrentTime = function(){
     var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
  
     clock.innerText = clockTime; 
-}; 
+  };
 
 
 updateClock();
+
 var oneSecond = 1000;
-setInterval( updateClock, oneSecond);
+
+setInterval(updateClock, oneSecond);

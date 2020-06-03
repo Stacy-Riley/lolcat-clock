@@ -7,24 +7,24 @@
   <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript src="script.js"></script>
+  <script src="script.js"></script>
 </head>
-<body>
-  <div class="page">
     <header>
       <h1>LOLCAT CLOCK</h1>
     </header>
-
+<body>
+  <div class="page">
     <h4>
       I CAN HAZ TIME?? 
-      <span id="clock">Clock goes here</span>
+      <!--Clock goes here-->
+      <span id="clock"></span>
     </h4>
 
     <img id="lolcat" src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg" alt="lolcat">
+<!--message goes here-->
+    <blockquote id="timeEvent"></blockquote>
 
-    <blockquote id="timeEvent">This is where time events are reported</blockquote>
 
-<div>
     <!--set Wake Up Time-->
     <select id="wakeUpTimeSelector">
       <option value="1">1 AM - 2AM</option>
@@ -108,9 +108,9 @@
       <option value="23">11 PM - 12AM</option>
       <option value="24">12 AM - 1AM</option>
       </select>
-   </div> 
+ 
     <button id="partyTimeButton">Party Time!</button>
-
+  </div>
     <footer>
       <p>© Skillcrush 2016</p>
     </footer>

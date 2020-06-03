@@ -19,6 +19,7 @@ body {
 header{
   font-size: 24px;
   line-height: 48px;
+  text-align: center;
 }
 h4 {
   font-size: 21px;
@@ -51,9 +52,11 @@ blockquote:after { content: '"'; }
   border-radius: 10px;
   border:10px solid #222;
 }
+
 #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector {
   padding: 10px 0;
 }
+
 #partyTimeButton {
   background-color: #222;
   width: 300px;
