@@ -2,12 +2,17 @@ alert("hello");
 
 var noon = 12;
 var evening = 18; // 6PM
-var wakeupTime = 9; // 9AM
+var wakeUpTime = 9; // 9AM
 var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = lunchTime + 2; // 2PM
 var time = new Date().getHours();
- 
+var isPartyTime = false;
+var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
+var lunchTimeSelector = document.getElementById("lunchTimeSelector");
+var napTimeSelector = document.getElementById("napTimeSelector");
+var partyTimeButton = document.getElementById("partyTimeButton");
+
 var updateClock = function(){
  
      var lolcat = document.getElementById('lolcat');
@@ -27,7 +32,7 @@ var updateClock = function(){
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     messageText = "IZ NOM NOM NOM TIME!!";
 } 
-    else if (time == wakeupTime) {
+    else if (time == wakeUpTime) {
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     messageText = "IZ TIME TO GETTUP.";
 } 
@@ -46,7 +51,7 @@ var updateClock = function(){
 
     message.innerText = messageText;
     lolcat.src = image;
-}
+};
 
 
 //All the elements of a working clock
@@ -86,12 +91,54 @@ var showCurrentTime = function(){
     var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
  
     clock.innerText = clockTime; 
-    //showCurrentTime();
-  };
+  
+};
 
+showCurrentTime();
 
 updateClock();
 
 var oneSecond = 1000;
 
 setInterval(updateClock, oneSecond);
+
+//Party Button
+
+var partyEvent = function() {
+    if (isPartyTime === false) {
+        isPartyTime = true;
+        time = partyTime;
+        partyTimeButton.innerText = "Party Time!!";
+        partyTimeButton.style.backgroundColor = "#0A2DAB";
+
+    }
+    else {
+        isPartyTime = false;
+        time = new Date().getHours();
+        partyTimeButton.innerText = "Party Over";
+        partyTimeButton.style.backgroundColor = "#0A8DAB";
+    }
+};
+//Add Event Listeners for button and the 3 time selector menus
+partyTimeButton.addEventListener("click", partyEvent);
+wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
+lunchTimeSelector.addEventListener("change", lunchTimeEvent);
+napTimeSelector = addEventListener("change", napTimeEvent);
+
+//////////////////////////////////////////////////////////
+
+//wakeUpTimeSelector
+var wakeUpEvent = function(){
+    wakeUpTime = wakeUpTimeSelector.value;
+};
+
+//lunchTimeSelector
+var lunchTimeEvent = function(){
+    lunchTime = lunchTimeSelector.value;
+};
+
+//napTimeSelector
+var napTimeEvent = function(){
+    napTime = napTimeSelector.value;
+};
+
