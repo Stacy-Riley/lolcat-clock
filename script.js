@@ -1,4 +1,6 @@
-alert("hello");
+$(document).ready(function(){
+
+//alert("hello");
 
 var noon = 12;
 var evening = 18; // 6PM
@@ -120,10 +122,15 @@ var partyEvent = function() {
     }
 };
 //Add Event Listeners for button and the 3 time selector menus
-partyTimeButton.addEventListener("click", partyEvent);
+
+//partyTimeButton.addEventListener("click", partyEvent); 
+//*This was turned off so JQuery could be used below with.click
+
 wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 lunchTimeSelector.addEventListener("change", lunchTimeEvent);
 napTimeSelector = addEventListener("change", napTimeEvent);
+
+$("#partyTimeButton").click(partyEvent);
 
 //////////////////////////////////////////////////////////
 
@@ -142,3 +149,19 @@ var napTimeEvent = function(){
     napTime = napTimeSelector.value;
 };
 
+
+//#lolcatButton section
+var lolcatButton = document.getElementById("lolcatButton");
+var lolcatImage = document.getElementById("lolcatImage");
+var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/napTime.jpg";
+ 
+var showMeTheLolcat = function(){
+    lolcatImage.src = image;
+    prompt("Do you really want to see the LOLCat?");
+};
+ 
+$("#lolcatButton").click(showMeTheLolcat);
+
+//lolcatButton.addEventListener("click", showMeTheLolcat);
+
+});
